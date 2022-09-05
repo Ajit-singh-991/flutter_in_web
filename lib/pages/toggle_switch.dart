@@ -11,40 +11,51 @@ class SwitchScreen extends StatefulWidget {
 }
 
 class SwitchClass extends State {
-  bool isSwitched = false;
-  var textValue = 'Switch is OFF';
+  //bool isSwitched = false;
+  var textValue = 'OFF';
 
-  void toggleSwitch(bool value) {
-    if (isSwitched == false) {
-      setState(() {
-        isSwitched = true;
-        textValue = 'Switch Button is ON';
-      });
-      print('Switch Button is ON');
-    } else {
-      setState(() {
-        isSwitched = false;
-        textValue = 'Switch Button is OFF';
-      });
-      print('Switch Button is OFF');
-    }
-  }
+  // void toggleSwitch(bool value) {
+  //   if (isSwitched == false) {
+  //     setState(() {
+  //       isSwitched = true;
+  //       textValue = 'ON';
+  //     });
+  //   } else {
+  //     setState(() {
+  //       isSwitched = false;
+  //       textValue = 'OFF';
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-      Transform.scale(
-          scale: 2,
-          child: Switch(
-            onChanged: toggleSwitch,
-            value: isSwitched,
-            activeColor: Colors.orange[600],
-            activeTrackColor: Colors.yellow,
-            inactiveThumbColor: Colors.redAccent,
-            inactiveTrackColor: Colors.orange,
-          )),
+      ElevatedButton(
+          onPressed: () {
+            setState(() {
+              textValue = 'ON';
+              Colors.orange;
+            });
+          },
+          onLongPress: () {
+            setState(() {
+              textValue = 'OFF';
+            });
+          },
+          child: Text("$textValue")),
+      // Transform.scale(
+      //     scale: 2,
+      //     child: Switch(
+      //       onChanged: toggleSwitch,
+      //       value: isSwitched,
+      //       activeColor: Colors.orange[600],
+      //       activeTrackColor: Colors.yellow,
+      //       inactiveThumbColor: Colors.redAccent,
+      //       inactiveTrackColor: Colors.orange,
+      //     )),
       Text(
-        '$textValue',
+        'Switch Button is $textValue',
         style: GoogleFonts.lato(
           fontStyle: FontStyle.italic,
           fontWeight: FontWeight.bold,
