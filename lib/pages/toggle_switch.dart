@@ -43,7 +43,9 @@ class SwitchClass extends State {
               textValue = 'OFF';
             });
           },
-          child: Text("$textValue")),
+          child: Text(
+            "$textValue",
+          )),
       // Transform.scale(
       //     scale: 2,
       //     child: Switch(
