@@ -11,22 +11,7 @@ class SwitchScreen extends StatefulWidget {
 }
 
 class SwitchClass extends State {
-  //bool isSwitched = false;
   var textValue = 'OFF';
-
-  // void toggleSwitch(bool value) {
-  //   if (isSwitched == false) {
-  //     setState(() {
-  //       isSwitched = true;
-  //       textValue = 'ON';
-  //     });
-  //   } else {
-  //     setState(() {
-  //       isSwitched = false;
-  //       textValue = 'OFF';
-  //     });
-  //   }
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +28,9 @@ class SwitchClass extends State {
               textValue = 'OFF';
             });
           },
-          child: Text("$textValue")),
-      // Transform.scale(
-      //     scale: 2,
-      //     child: Switch(
-      //       onChanged: toggleSwitch,
-      //       value: isSwitched,
-      //       activeColor: Colors.orange[600],
-      //       activeTrackColor: Colors.yellow,
-      //       inactiveThumbColor: Colors.redAccent,
-      //       inactiveTrackColor: Colors.orange,
-      //     )),
+          child: Text(
+            "$textValue",
+          )),
       Text(
         'Switch Button is $textValue',
         style: GoogleFonts.lato(
